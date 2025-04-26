@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doce Delícia Confeitaria</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <nav class="navbar">
+            <div class="logo">Doce Delícia</div>
+            <div class="nav-controls">
+                <button class="hamburger" aria-label="Menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </button>
+                <div class="cart-icon-wrapper">
+                    <a href="#" class="cart-link">
+                        <img src="img/carrinho.png" alt="Carrinho" class="cart-icon">
+                        <span id="cart-item-count">0</span>
+                    </a>
+                    <div id="floating-cart">
+                        <h2>Seu Carrinho</h2>
+                        <ul id="floating-cart-items">
+                            </ul>
+                        <p id="floating-cart-total">Total: R$ 0.00</p>
+                        <button id="checkout-button">Finalizar Compra</button>
+                    </div>
+                </div>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#">Home</a></li>
+                <li class="has-submenu">
+                    <a href="#">Conteúdo</a>
+                    <ul class="submenu">
+                        <li><a href="#">Bolos</a></li>
+                        <li><a href="#">Doces</a></li>
+                        <li><a href="#">Pães</a></li>
+                        <li><a href="#">Docinhos</a></li>
+                        <li><a href="#">Tortas</a></li>
+                    </ul>
+                </li>
+                <li><a href="#">Info</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>Os melhores sabores da cidade</h1>
+            <p>Feitos com amor e carinho para adoçar o seu dia</p>
+        </section>
+
+        <section class="products">
+            <h2>Nossos Produtos</h2>
+            <div class="product-grid">
+                <div class="product-card" data-id="1" data-name="Bolo de Chocolate" data-price="45.00">
+                    <img src="img/bolo-de-aniversario-4.webp" alt="Bolo de Chocolate">
+                    <h3>Bolo de Chocolate</h3>
+                    <p>R$ 45.00</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-decrease">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-increase">+</button>
+                    </div>
+                    <button class="add-to-cart">Adicionar ao carrinho</button>
+                </div>
+                <div class="product-card" data-id="2" data-name="Docinhos Sortidos" data-price="30.00">
+                    <img src="img/images.jpg" alt="Docinhos Sortidos">
+                    <h3>Docinhos Sortidos</h3>
+                    <p>R$ 30.00</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-decrease">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-increase">+</button>
+                    </div>
+                    <button class="add-to-cart">Adicionar ao carrinho</button>
+                </div>
+                <div class="product-card" data-id="3" data-name="Pão Caseiro" data-price="12.00">
+                    <img src="img/paocaseiro.jpg" alt="Pão Caseiro">
+                    <h3>Pão Caseiro</h3>
+                    <p>R$ 12.00</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-decrease">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-increase">+</button>
+                    </div>
+                    <button class="add-to-cart">Adicionar ao carrinho</button>
+                </div>
+                <div class="product-card" data-id="4" data-name="Brigadeiro" data-price="5.00">
+                    <img src="img/brigadeiro.jpg" alt="Brigadeiro">
+                    <h3>Brigadeiro</h3>
+                    <p>R$ 5.00</p>
+                    <div class="quantity-controls">
+                        <button class="quantity-decrease">-</button>
+                        <input type="number" class="quantity-input" value="1" min="1">
+                        <button class="quantity-increase">+</button>
+                    </div>
+                    <button class="add-to-cart">Adicionar ao carrinho</button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Doce Delícia Confeitaria. Todos os direitos reservados.</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

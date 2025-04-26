@@ -1,0 +1,414 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', sans-serif;
+    background-color: #fff8f4;
+    color: #333;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    background-color: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1em 2em;
+    flex-wrap: wrap; /* Adicionado para melhor responsividade */
+}
+
+.logo {
+    font-size: 1.8em;
+    color: #e44d26;
+    font-weight: bold;
+    margin-bottom: 0; /* Reset da margem para telas pequenas */
+}
+
+.nav-controls {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+}
+
+.cart-icon-wrapper {
+    position: relative;
+}
+
+.cart-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+    color: inherit;
+}
+
+.cart-icon {
+    width: 24px;
+    height: 24px;
+}
+
+#cart-item-count {
+    background-color: #e44d26;
+    color: #fff;
+    border-radius: 50%;
+    font-size: 0.7em;
+    padding: 2px 6px;
+    position: absolute;
+    top: -8px;
+    right: -8px;
+}
+
+#floating-cart {
+    position: absolute;
+    top: 100%; /* Abaixo do ícone do carrinho */
+    right: 0;
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-top: 10px;
+    width: 250px;
+    display: none; /* Inicialmente escondido */
+    z-index: 1002; /* Acima do menu hamburguer */
+}
+
+#floating-cart h2 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    color: #e44d26;
+}
+
+#floating-cart-items {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 10px;
+}
+
+#floating-cart-items li {
+    padding: 8px 0;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between; /* Alinha os itens horizontalmente */
+    align-items: center;
+    flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha em telas pequenas */
+    gap: 0.5em; /* Adiciona um pequeno espaço entre os itens */
+}
+
+#floating-cart-items li > span {
+    flex-grow: 1;
+    min-width: 80px; /* Garante uma largura mínima para o nome e preço */
+}
+
+.cart-item-quantity-controls {
+    display: flex;
+    align-items: center;
+}
+
+.cart-item-quantity-controls button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 3px 7px;
+    cursor: pointer;
+    margin: 0 3px;
+    font-size: 0.8em;
+}
+
+.cart-item-quantity {
+    width: 40px; /* Aumentei um pouco a largura para melhor visualização */
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 3px;
+    margin: 0 3px;
+    font-size: 0.8em;
+}
+
+.remove-item-button {
+    background: none;
+    border: 1px solid #e44d26;
+    color: #e44d26;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.8em;
+    /* margin-left: 10px; Removi a margem esquerda para melhor quebra */
+    transition: background-color 0.3s ease, color 0.3s ease;
+    flex-basis: 100%; /* Faz o botão ocupar a largura total em telas pequenas */
+    margin-top: 0.5em; /* Adiciona um pouco de espaço acima do botão quando quebra a linha */
+}
+
+.remove-item-button:hover {
+    background-color: #e44d26;
+    color: #fff;
+}
+
+#floating-cart-total {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+#checkout-button {
+    background-color: #5cb85c;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background-color 0.3s ease;
+}
+
+#checkout-button:hover {
+    background-color: #4cae4c;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 1em;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e44d26;
+}
+
+.hamburger {
+    display: none;
+    flex-direction: column;
+    cursor: pointer;
+    background: none;
+    border: none;
+}
+
+.bar {
+    width: 25px;
+    height: 3px;
+    background: #333;
+    margin: 4px 0;
+}
+
+.has-submenu:hover .submenu {
+    display: block;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 30px;
+    left: 0;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+}
+
+.submenu li {
+    margin: 5px 0;
+}
+
+.hero {
+    background: url('img/imagem confeitaria.avif') no-repeat center center/cover;
+    color: #fff;
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 3em;
+}
+
+.hero p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+.products {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+.products h2 {
+    color: #e44d26;
+    margin-bottom: 30px;
+}
+
+.product-grid {
+    display: grid;
+    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+.product-card {
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.product-card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 10px;
+}
+
+.product-card h3 {
+    margin: 10px 0 5px;
+}
+
+.product-card p {
+    color: #666;
+    margin-bottom: 15px;
+}
+
+.product-card .quantity-controls {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.product-card .quantity-controls button {
+    background: none;
+    border: 1px solid #ccc;
+    padding: 5px 10px;
+    cursor: pointer;
+    margin: 0 5px;
+}
+
+.product-card .quantity-controls input {
+    width: 40px;
+    text-align: center;
+    border: 1px solid #ccc;
+    padding: 5px;
+    margin: 0 5px;
+}
+
+.product-card button.add-to-cart {
+    background: #5cb85c;
+    color: #fff;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s;
+    margin-top: auto;
+}
+
+.product-card button.add-to-cart:hover {
+    background: #4cae4c;
+}
+
+footer {
+    text-align: center;
+    background: #333;
+    color: white;
+    padding: 20px 0;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 768px) {
+    .navbar {
+        padding: 1em;
+        flex-wrap: wrap; /* Permite que os itens quebrem para a próxima linha */
+    }
+
+    .logo {
+        font-size: 1.5em;
+        margin-bottom: 0;
+    }
+
+    .nav-controls {
+        order: 1; /* Coloca os controles do lado direito */
+        margin-left: auto; /* Empurra para a direita */
+    }
+
+    .nav-links {
+        order: 2; /* Coloca os links abaixo */
+        position: absolute;
+        top: 60px; /* Ajuste conforme a altura do header */
+        left: 0;
+        background: #fff;
+        flex-direction: column;
+        align-items: flex-start;
+        width: 100%;
+        padding: 20px;
+        display: none;
+        transform: translateX(0); /* Garante que comece no lugar certo */
+        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+        z-index: 1001;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 0.5em 0;
+    }
+
+    .nav-links a {
+        font-size: 1em;
+    }
+
+    .has-submenu > a::after {
+        content: ' ▾';
+    }
+
+    .submenu {
+        position: relative;
+        top: 0;
+        left: 0;
+        box-shadow: none;
+        border: none;
+        border-radius: 0;
+        padding-left: 20px;
+    }
+
+    .submenu li {
+        margin-left: 0; /* Added a default value to complete the rule */ 
+    }
+}
+
+    .hamburger {
+        display: flex;
+        order: 0; /* Coloca o menu hamburguer no topo */
+        margin-left: auto; /* Empurra para a direita */
+    }
+
+    .cart-icon-wrapper {
+        order: 3; /* Coloca o carrinho abaixo dos links */
+        margin-left: auto; /* Empurra para a direita */
+    }
+
+    .hero h1 {
+        font-size: 2.5em;
+    }
+
+    .hero p {
+        font-size: 1em;
+    }
+
